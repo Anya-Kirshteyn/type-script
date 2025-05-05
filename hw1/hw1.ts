@@ -766,3 +766,307 @@
 //         });
 //     }
 // }
+// 6.9
+// // Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+
+//
+// const groupedDeck: GroupedDeck = deck.reduce((acc, card) => {
+//     acc[card.cardSuit].push(card);
+//     return acc;
+// }, {
+//     spade: [],
+//     diamond: [],
+//     heart: [],
+//     clubs: []
+// });
+// неможливо закінчити завдання, використовуючи reduce і type/interface. потрібно використовувати(initialValue або as GroupedDeck) який ми ще не вчили на1му уроці
+
+// - знайти піковий туз
+//  const aceSpade:Card | undefined=deck.find(ace => ace.cardSuit === 'spade' && ace.value === 'ace');
+// console.log(aceSpade);
+
+// - всі шістки
+// const sixmix:Card[]=deck.filter(deck => deck.value === '6');
+// console.log(sixmix);
+
+// - всі червоні карти
+
+// - всі буби
+// - всі трефи від 9 та більше
+
+// const redCards:Card[]=deck.filter(card => card.color === 'red');
+// console.log(redCards);
+
+// const diamondcards:Card[]=deck.filter(card => card.cardSuit === 'diamond');
+// console.log(diamondcards);
+
+// - всі трефи від 9 та більше
+//
+// const clubsstreet:Card[] = deck.filter(card =>
+//     card.cardSuit === 'clubs' &&
+//     (card.value === '9' || card.value === '10' ||
+//         card.value === 'jack' || card.value === 'queen' ||
+//         card.value === 'king' || card.value === 'ace')
+// );
+// console.log(clubsstreet);
+
+// // 6.9
+// написати пошук всіх об'єктів, в яких в modules є sass
+// type CourseType={
+//     title: string,
+//     monthDuration:number ,
+//     hourDuration: number,
+//     modules:string[]
+// }
+// let coursesArray:CourseType[] = [
+//     {
+//         title: 'JavaScript Complex',
+//         monthDuration: 5,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+//     },
+//     {
+//         title: 'Java Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'java core',
+//             'java advanced']
+//     },
+//     {
+//         title: 'Python Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'python core',
+//             'python advanced']
+//     },
+//     {
+//         title: 'QA Complex',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+//     },
+//     {
+//         title: 'FullStack',
+//         monthDuration: 7,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'react',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'node.js',
+//             'python',
+//             'java']
+//     },
+//     {
+//         title: 'Frontend',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+//     }
+// ];
+// const sas=coursesArray.filter(item => item.modules.includes('sass') );
+// console.log(sas);
+//
+// const docker=coursesArray.filter(item => item.modules.includes('docker') );
+// console.log(docker);
+// ========================================================================================================================
+// ========================================================================================================================
+// ========================================================================================================================
+// ========================================================================================================================
+// ========================================================================================================================
+// 7.1
+// - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
+// створити пустий масив, наповнити його 10 об'єктами new User(....)
+// type UserType={
+//     id:number,
+//     name:string,
+//     surname:string,
+//     email:string,
+//     phone:number
+// }
+// <====не  нужен
+
+class User {
+    constructor(
+        public id: number,
+        public name: string,
+        public surname: string,
+        public email: string,
+        public phone: number
+    ) {}
+}
+// const arrUsers:User[]=[];
+// arrUsers.push(new User(1,'ss','sa', 'ss@mail',+972))
+// arrUsers.push(new User(2,'sgfs','sda', 'vbs@mail',+9572))
+// arrUsers.push(new User(3,'sd','sa', 'ads@mail',+9721))
+// arrUsers.push(new User(4,'kks','sa', 'ks@mail',+97223))
+// arrUsers.push(new User(5,'hh','sha', 'hs@mail',+97322))
+// arrUsers.push(new User(6,'rrs','rr', 'sr@mail',+9732))
+// arrUsers.push(new User(7,'gg','sa', 'ggs@mail',+9722))
+// arrUsers.push(new User(8,'ddd','da', 'dds@mail',+9723))
+// arrUsers.push(new User(9,'aa','sa', 'aaa@mail',+9722))
+// arrUsers.push(new User(10,'ww','sa', 'sww@mail',+9721))
+//
+// console.log(arrUsers);
+
+// Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
+// let filtr:User[]=arrUsers.filter(user=>user.id % 2 === 0);
+// console.log(filtr);
+
+// Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
+//
+// let sortedUsers:User[]=arrUsers.sort((a,b):number=>a.id - b.id)
+// console.log(sortedUsers)
+
+// 7.2
+// - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+// створити пустий масив, наповнити його 10 об'єктами Client
+// class ClientClass{
+//     constructor(
+//         public id:number,
+//         public name:string,
+//         public surname:string,
+//         public  email:string,
+//         public  phone:number | string,
+//         public  order:string[]
+//     ) {}
+// }
+//
+// const clients:ClientClass[] = [
+//     new ClientClass(1, 'Анна', 'Иванова', 'anna@example.com', '+380971234567', ['Laptop', 'Mouse']),
+//     new ClientClass(2, 'Олег', 'Петров', 'oleg@example.com', '+380976543210', ['Phone']),
+//     new ClientClass(3, 'Мария', 'Сидорова', 'maria@example.com', '+380965432109', ['Tablet', 'Keyboard', 'Headphones']),
+//     new ClientClass(4, 'Иван', 'Коваленко', 'ivan@example.com', '+380954321098', ['TV']),
+//     new ClientClass(5, 'Татьяна', 'Лебедева', 'tatiana@example.com', '+380943210987', ['Monitor', 'USB Hub']),
+//     new ClientClass(6, 'Алексей', 'Морозов', 'alex@example.com', '+380932109876', ['Printer']),
+//     new ClientClass(7, 'Юлия', 'Григорьева', 'yulia@example.com', '+380921098765', ['SSD', 'RAM']),
+//     new ClientClass(8, 'Сергей', 'Бондаренко', 'sergey@example.com', '+380910987654', ['Smartwatch']),
+//     new ClientClass(9, 'Екатерина', 'Семенова', 'ekaterina@example.com', '+380909876543', ['Game Console', 'Controller']),
+//     new ClientClass(10, 'Николай', 'Кузнецов', 'nikolay@example.com', '+380898765432', ['Router'])
+// ];
+
+// 7.3
+// Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
+//
+// console.log(clients.sort((a:ClientClass,b:ClientClass):number=> a.order.length - b.order.length));
+
+// 7.4
+
+// - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+// -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+// -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
+// -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+// -- changeYear (newValue) - змінює рік випуску на значення newValue
+// -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+
+
+function Car(model, manufacturer, year, maxSpeed, engineVolume) {
+    this.model = model;
+    this.manufacturer = manufacturer;
+    this.year = year;
+    this.maxSpeed = maxSpeed;
+    this.engineVolume = engineVolume;
+    this.drive= function(){
+        console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)};
+
+    this.info = function () {
+        for (const key in this) {
+            if (typeof this[key] !== "function") {
+                console.log(`${key} - ${this[key]}`);
+            }
+        }
+    };
+    this.newSpeed = function(addSpeed) {
+        this.maxSpeed = this.maxSpeed+addSpeed;
+    }
+    this.renewYear= function(renewYear) {
+        if (renewYear > this.year) {this.year = renewYear;}
+        else (console.log('time machine not found'))
+    }
+    this.addDriver = function (driverObg) {
+        this.driver = driverObg;
+    };
+
+}
+
+
+const myCar = new Car("Model S", "Tesla", 2022, 250, 2.0);
+
+myCar.drive();
+myCar.info();
+
+
+myCar.newSpeed(30);
+myCar.drive();
+
+
+myCar.renewYear(2025);
+myCar.info();
+
+
+myCar.addDriver({ name: "Олексій", age: 30, experience: "10 років" });
+
+myCar.info();
+console.log(myCar.driver);
+
+
+
+// class Car{
+//     constructor(model, manufacturer, year, maxSpeed, engineVolume){
+//         this.model = model;
+//         this.manufacturer = manufacturer;
+//         this.year = year;
+//         this.maxSpeed = maxSpeed;
+//         this.engineVolume = engineVolume;
+//         this.drive= function(){
+//             console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)};
+//
+//         this.info = function () {
+//             for (const key in this) {
+//                 if (typeof this[key] !== "function") {
+//                     console.log(`${key} - ${this[key]}`);
+//                 }
+//             }
+//         };
+//         this.newSpeed = function(addSpeed) {
+//             this.maxSpeed = this.maxSpeed+addSpeed;
+//         }
+//         this.renewYear= function(renewYear) {
+//             if (renewYear > this.year) {this.year = renewYear;}
+//             else (console.log('time machine not found'))
+//         }
+//         this.addDriver = function (driverObg) {
+//             this.driver = driverObg;
+//         };
+//
+//     }}
+//
+// const myCar = new Car("Model S", "Tesla", 2022, 250, 2.0)
+// myCar.info();
+//
+
+
+
