@@ -641,3 +641,128 @@
 // ===========================================================================
 
 // hw6.1
+// - Знайти та вивести довижину настипних стрінгових значень
+// 'hello world', 'lorem ipsum', 'javascript is cool'
+// const a='hello world';
+// const b='lorem ipsum';
+// const c='javascript is cool';
+// const strings:string[]=[a,b,c];
+// for(const string of strings){
+//     console.log(string.length);
+// }
+// 6.2
+// - Перевести до нижнього регістру настипні стрінгові значення
+// 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
+// const a='HELLO WORLD';
+// const b='LOREM IPSUM';
+// const c='JAVASCRIPT IS COOL';
+// const abc:string[]=[a,b,c]
+// const lowerCase=abc.map(item=>item.toLowerCase());
+// console.log(lowerCase);
+// 6.3
+// - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
+//     let str:string = ' dirty string   '
+// console.log(str.trim())
+// 6.4
+// - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
+// const stringToArray = (item:string):string[] => item.split(' ');
+// let str:string = 'Ревуть воли як ясла повні';
+// let arr:string[] = stringToArray(str);
+// console.log(arr);
+// - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
+// 6.5
+//  const num:number[]=[10,8,-7,55,987,-1011,0,1050,0]
+// const fix:string[]=num.map(i => i+'')
+// console.log(fix)
+// 6.6
+// / - створити функцію sortNums(array,direction), яка прймає масив чисел, та сортує його від більшого до меньшого,
+// або навпаки в залежності від значення аргументу direction.
+//     let nums:number[] = [11,21,3];
+// const sortNums=(array:number[],direction:string):number[]=>{
+//     if(direction==='ascending'){
+//         return array.sort((a,b)=>a-b);
+//     }
+//     if(direction==='descending'){
+//         return array.sort((a,b)=>b-a);
+//     }
+//     return [...array]
+// }
+// console.log(sortNums([1,2,3,4],'descending'));
+// 6.7
+// -- відсортувати його за спаданням за monthDuration
+// -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
+// -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+// // =========================
+// type courseType={
+//     title:string,
+//     monthDuration:number
+//     id?:number
+// }
+//
+// let coursesAndDurationArray:courseType[] = [
+// {title: 'JavaScript Complex', monthDuration: 5},
+// {title: 'Java Complex', monthDuration: 6},
+// {title: 'Python Complex', monthDuration: 6},
+// {title: 'QA Complex', monthDuration: 4},
+// {title: 'FullStack', monthDuration: 7},
+// {title: 'Frontend', monthDuration: 4}]
+//
+//     const LmonthDuration=coursesAndDurationArray.sort((a,b):number => b.monthDuration - a.monthDuration)
+// console.log(LmonthDuration)
+//
+//
+// const Fivemonth=coursesAndDurationArray.filter(x =>x.monthDuration>=5)
+// console.log(Fivemonth)
+//
+//
+// const idAdd = coursesAndDurationArray.map((course, index) => ({
+//     id:index+1,
+//     title:course.title,
+//     monthDuration:course.monthDuration,}
+// )
+// );
+// console.log(idAdd)
+// 6.8
+// описати колоду карт (від 6 до туза без джокерів)
+// - знайти піковий туз
+// - всі шістки
+// - всі червоні карти
+// - всі буби
+// - всі трефи від 9 та більше
+// type Suit = 'spade' | 'diamond' | 'heart' | 'clubs';
+// type Color = 'red' | 'black';
+// type Value = '6' | '7' | '8' | '9' | '10' | 'jack' | 'queen' | 'king' | 'ace';
+//
+// type Card = {
+//     cardSuit: Suit;
+//     value: Value;
+//     color: Color;
+// };
+//
+// const suits: Suit[] = ['spade', 'diamond', 'heart', 'clubs'];
+// const values: Value[] = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+// const colors: {
+//     spade: Color,
+//     diamond: Color,
+//     heart: Color,
+//     clubs: Color
+// } = {
+//     spade: 'black',
+//     clubs: 'black',
+//     diamond: 'red',
+//     heart: 'red'
+// };
+//
+// const deck: Card[] = [];
+//
+// for (let i = 0; i < suits.length; i++) {
+//     for (let j = 0; j < values.length; j++) {
+//         const suit = suits[i];
+//         const color = colors[suit];
+//         deck.push({
+//             cardSuit: suit,
+//             value: values[j],
+//             color: color
+//         });
+//     }
+// }
