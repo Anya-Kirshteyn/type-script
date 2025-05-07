@@ -982,91 +982,170 @@ class User {
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
-
-function Car(model, manufacturer, year, maxSpeed, engineVolume) {
-    this.model = model;
-    this.manufacturer = manufacturer;
-    this.year = year;
-    this.maxSpeed = maxSpeed;
-    this.engineVolume = engineVolume;
-    this.drive= function(){
-        console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)};
-
-    this.info = function () {
-        for (const key in this) {
-            if (typeof this[key] !== "function") {
-                console.log(`${key} - ${this[key]}`);
-            }
-        }
-    };
-    this.newSpeed = function(addSpeed) {
-        this.maxSpeed = this.maxSpeed+addSpeed;
-    }
-    this.renewYear= function(renewYear) {
-        if (renewYear > this.year) {this.year = renewYear;}
-        else (console.log('time machine not found'))
-    }
-    this.addDriver = function (driverObg) {
-        this.driver = driverObg;
-    };
-
-}
-
-
-const myCar = new Car("Model S", "Tesla", 2022, 250, 2.0);
-
-myCar.drive();
-myCar.info();
-
-
-myCar.newSpeed(30);
-myCar.drive();
-
-
-myCar.renewYear(2025);
-myCar.info();
-
-
-myCar.addDriver({ name: "Олексій", age: 30, experience: "10 років" });
-
-myCar.info();
-console.log(myCar.driver);
-
-
-
-// class Car{
-//     constructor(model, manufacturer, year, maxSpeed, engineVolume){
-//         this.model = model;
-//         this.manufacturer = manufacturer;
-//         this.year = year;
-//         this.maxSpeed = maxSpeed;
-//         this.engineVolume = engineVolume;
-//         this.drive= function(){
-//             console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)};
+// type CarType={
+//     model:string,
+//     manufacturer:string,
+//     year:number,
+//     maxSpeed:number,
+//     engineVolume:number,
+//     drive:()=>void,
+//     info:()=>void,
+//     increaseMaxSpeed?:(newSpeed:number)=>void,
+//     changeYear?: (newYear: number) => void;
+//     driver?: DriverType
+//     addDriver: (driver: DriverType) => void;
+//     [key: string]: any;
 //
-//         this.info = function () {
-//             for (const key in this) {
-//                 if (typeof this[key] !== "function") {
-//                     console.log(`${key} - ${this[key]}`);
-//                 }
+// }
+// type DriverType={
+//     name: string;
+//     age: number;
+//     license?: string;
+// }
+// function Car(this:CarType,
+//     model:string,
+//     manufacturer:string,
+//     year:number,
+//     maxSpeed:number,
+//     engineVolume:number,
+// ) {
+//     this.model = model;
+//     this.manufacturer = manufacturer;
+//     this.year = year;
+//     this.maxSpeed = maxSpeed;
+//     this.engineVolume = engineVolume;
+//
+//
+//     this.drive = function () {
+//         console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)
+//     };
+//
+//     this.info = function () {
+//         for (const key in this) {
+//             if (this.hasOwnProperty(key) && typeof this[key] !== "function")  {
+//                 console.log(`${key} - ${this[key]}`);
 //             }
-//         };
-//         this.newSpeed = function(addSpeed) {
-//             this.maxSpeed = this.maxSpeed+addSpeed;
 //         }
-//         this.renewYear= function(renewYear) {
-//             if (renewYear > this.year) {this.year = renewYear;}
-//             else (console.log('time machine not found'))
-//         }
-//         this.addDriver = function (driverObg) {
-//             this.driver = driverObg;
-//         };
+//     };
+//     this.increaseMaxSpeed = function (newSpeed) {
+//         this.maxSpeed += newSpeed;
+//     }
 //
-//     }}
+//     this.changeYear = function (newYear) {
+//         if (newYear > this.year) {
+//             this.year = newYear;
+//         } else (console.log('time machine not found'))
+//     }
+//     this.addDriver = function (driver: DriverType) {
+//         this.driver = driver;
+//     };
+// }
 //
-// const myCar = new Car("Model S", "Tesla", 2022, 250, 2.0)
+//     const myCar = new (Car as any)("Tesla", "Model S", 2023, 250, 3.0)
+//
+//
+// myCar.drive();
 // myCar.info();
 //
+//
+// myCar.newSpeed(30);
+// myCar.drive();
+//
+//
+// myCar.renewYear(2025);
+// myCar.info();
+//
+//
+// myCar.addDriver({ name: "Олексій", age: 30, experience: "10 років" });
+//
+// myCar.info();
+// console.log(myCar.driver);
+
+// 7.5
+
+// type DriverType = {
+//     name: string;
+//     age: number;
+//     license?: string;
+// };
+// class Car {
+//     constructor(
+//         public model: string,
+//         public manufacturer: string,
+//         public year: number,
+//         public maxSpeed: number,
+//         public engineVolume: number,
+//         public driver?: DriverType
+//     ) {}
+//
+//     info(): void {
+//         for (const key in this) {
+//             if (this.hasOwnProperty(key) && typeof this[key] !== "function") {
+//                 console.log(`${key} - ${this[key]}`);
+//                 if (this.driver) {
+//                     console.log(`Водій: ${this.driver.name}, ${this.driver.age} років`);
+//                 }
+//             }
+//         }
+//     }
+//    increaseMaxSpeed(newSpeed:number):void {
+//         this.maxSpeed += newSpeed;
+//     }
+//    changeYear (newYear:number):void {
+//         if (newYear > this.year) {
+//             this.year = newYear;
+//         } else (console.log('time machine not found'))
+//     }
+//    addDrive (driver: DriverType):void {
+//         this.driver = driver;
+//     };
+// }
+
+// 7.6
+// -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+// Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+//     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
+//     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+
+class Cinderella{
+    constructor(
+        public name = string;
+        public age = number;
+      public footsize = number){
+    }
+}
+
+class Creep{
+    constructor(name,age,intertest){
+        this.name = name;
+        this.age = age;
+        this.intertest = intertest;
+    }
+}
+
+const Cinderellas=[
+    new Cinderella('girl',18,38),
+    new Cinderella('giarl',18,39),
+    new Cinderella('gisdrl',18,48),
+    new Cinderella('girlsd',18,38),
+    new Cinderella('girl',18,34),
+    new Cinderella('giaarl',18,38),
+    new Cinderella('gidrl',18,38),
+    new Cinderella('theItgirl',27,37),
+    new Cinderella('girl',18,38),
+    new Cinderella('giddrl',18,38),
+
+]
+const prince=new Creep('prince',27,37)
+
+for (girl of Cinderellas){
+    if (girl.footsize === prince.intertest){
+        console.log(girl.name);
+    }
+}
+
+const serch=Cinderellas.find(girl => girl.footsize === prince.intertest)
+console.log(serch)
 
 
 
