@@ -1077,15 +1077,14 @@ class User {
 //         public engineVolume: number,
 //         public driver?: DriverType
 //     ) {}
-//
 //     info(): void {
-//         for (const key in this) {
-//             if (this.hasOwnProperty(key) && typeof this[key] !== "function") {
-//                 console.log(`${key} - ${this[key]}`);
-//                 if (this.driver) {
-//                     console.log(`Водій: ${this.driver.name}, ${this.driver.age} років`);
-//                 }
-//             }
+//         console.log(`model - ${this.model}`);
+//         console.log(`manufacturer - ${this.manufacturer}`);
+//         console.log(`year - ${this.year}`);
+//         console.log(`maxSpeed - ${this.maxSpeed}`);
+//         console.log(`engineVolume - ${this.engineVolume}`);
+//         if (this.driver) {
+//             console.log(`driver - ${this.driver.name}, ${this.driver.age} років`);
 //         }
 //     }
 //    increaseMaxSpeed(newSpeed:number):void {
@@ -1107,45 +1106,117 @@ class User {
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 
-class Cinderella{
-    constructor(
-        public name = string;
-        public age = number;
-      public footsize = number){
-    }
+// class Cinderella {
+//     constructor(
+//         public name: string,
+//         public age: number,
+//         public ShoeSize: number) {}
+// }
+//
+// class Creep{
+//     constructor(
+//         public name : string,
+//         public age : number,
+//        public intertest:number) {}
+// }
+//
+// const Cinderellas:Cinderella[]=[
+//     new Cinderella('girl',18,38),
+//     new Cinderella('giarl',18,39),
+//     new Cinderella('gisdrl',18,48),
+//     new Cinderella('girlsd',18,38),
+//     new Cinderella('girl',18,34),
+//     new Cinderella('giaarl',18,38),
+//     new Cinderella('gidrl',18,38),
+//     new Cinderella('theItgirl',27,37),
+//     new Cinderella('girl',18,38),
+//     new Cinderella('giddrl',18,38),
+//
+// ]
+// const prince:Creep=new Creep('prince',27,37)
+//
+// for (const girl of Cinderellas){
+//     if (girl.ShoeSize === prince.intertest){
+//         console.log(girl.name);
+//     }
+// }
+//
+// const search=Cinderellas.find(girl => girl.ShoeSize === prince.intertest)
+// if (search){
+//     console.log(search.name)}
+// else {console.log('not found')}
+//
+
+
+// 7.7
+// *Через Array.prototype. створити власний foreach, filter
+
+// interface Array<T>{
+//     myForEach(callback: (item: T,index: number,array:T[])=>void):void;
+// }
+//
+// Array.prototype.myForEach = function<T> (callback:(item: T,index: number,array:T[])=>void):void {
+//  for(let i=0;i<this.length; i++){
+//      callback(this[i],i,this)
+//    }
+// };
+//
+// [11, 22, 33].myForEach((x,i)=> {console.log(`index ${i}`,x)});
+
+// ===================================================================================
+// ===================================================================================
+// ===================================================================================
+// ===================================================================================
+// 8.1
+// Створити функцію, яка робить глибоку копію об'єкту JSON.
+//
+// -1)Додати перевірки на undefined, null, NaN.
+//
+//     -2)Подумати і реалізувати логіку, в якій кінцевий об'єкт буде мати функції,' +
+// -3)'які в нього були до цього моменту.
+
+// type ClonableObject={[key:string]:any}
+//
+// function cloner(obj:ClonableObject ):ClonableObject {
+//     if(obj){
+//         let functions:{key:string,functionClone:Function}[]=[]
+//
+//         for (let key in obj){
+//             if(typeof obj[key] === 'function'){
+//                 const functionClone = obj[key].bind({});
+//                 functions.push({functionClone, key})
+//             }
+//         }
+//         const cloneObg:ClonableObject=JSON.parse(JSON.stringify(obj))
+//         for (let func of functions){
+//
+//             cloneObg[func.key] = func.functionClone;
+//         }
+//
+//         return cloneObg
+//     }
+//     throw new Error('10101010')
+// }
+// const clone=cloner({id:123,name:"John", greeting(){console.log("Greeting")}, beliberda(){console.log("Beliberda")}})
+//
+// console.log(clone)
+
+// 8.2
+// за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration
+//     Зробити все ВИКЛЮЧНО за допомоги інлайн конструкції
+//
+type SomeType={
+    id?:number;
+    title:string;
+    monthDuration:number
 }
-
-class Creep{
-    constructor(name,age,intertest){
-        this.name = name;
-        this.age = age;
-        this.intertest = intertest;
-    }
-}
-
-const Cinderellas=[
-    new Cinderella('girl',18,38),
-    new Cinderella('giarl',18,39),
-    new Cinderella('gisdrl',18,48),
-    new Cinderella('girlsd',18,38),
-    new Cinderella('girl',18,34),
-    new Cinderella('giaarl',18,38),
-    new Cinderella('gidrl',18,38),
-    new Cinderella('theItgirl',27,37),
-    new Cinderella('girl',18,38),
-    new Cinderella('giddrl',18,38),
-
-]
-const prince=new Creep('prince',27,37)
-
-for (girl of Cinderellas){
-    if (girl.footsize === prince.intertest){
-        console.log(girl.name);
-    }
-}
-
-const serch=Cinderellas.find(girl => girl.footsize === prince.intertest)
-console.log(serch)
-
-
+let coursesAndDurationArray:SomeType[] = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+const fod:SomeType[]=coursesAndDurationArray.map((course,index):SomeType => ({...course, id:index+1}))
 
