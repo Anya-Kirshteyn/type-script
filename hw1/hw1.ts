@@ -643,85 +643,86 @@
 // hw6.1
 // - Знайти та вивести довижину настипних стрінгових значень
 // 'hello world', 'lorem ipsum', 'javascript is cool'
-// const a='hello world';
-// const b='lorem ipsum';
-// const c='javascript is cool';
-// const strings:string[]=[a,b,c];
-// for(const string of strings){
-//     console.log(string.length);
-// }
+const z='hello world';
+const x='lorem ipsum';
+const v='javascript is cool';
+const strings:string[]=[z,x,v];
+for(const string of strings){
+    console.log(string.length);
+}
 // 6.2
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
-// const a='HELLO WORLD';
-// const b='LOREM IPSUM';
-// const c='JAVASCRIPT IS COOL';
-// const abc:string[]=[a,b,c]
-// const lowerCase=abc.map(item=>item.toLowerCase());
-// console.log(lowerCase);
+const a='HELLO WORLD';
+const b='LOREM IPSUM';
+const c='JAVASCRIPT IS COOL';
+const abc:string[]=[a,b,c]
+const lowerCase=abc.map(item=>item.toLowerCase());
+console.log(lowerCase);
 // 6.3
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
-//     let str:string = ' dirty string   '
-// console.log(str.trim())
+    let str1:string = ' dirty string   '
+console.log(str1.trim())
 // 6.4
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
-// const stringToArray = (item:string):string[] => item.split(' ');
-// let str:string = 'Ревуть воли як ясла повні';
-// let arr:string[] = stringToArray(str);
-// console.log(arr);
+const stringToArray = (item:string):string[] => item.split(' ');
+let str:string = 'Ревуть воли як ясла повні';
+let arr:string[] = stringToArray(str);
+console.log(arr);
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
 // 6.5
-//  const num:number[]=[10,8,-7,55,987,-1011,0,1050,0]
-// const fix:string[]=num.map(i => i+'')
-// console.log(fix)
+ const num:number[]=[10,8,-7,55,987,-1011,0,1050,0]
+const fix:string[]=num.map(i => i+'')
+console.log(fix)
 // 6.6
 // / - створити функцію sortNums(array,direction), яка прймає масив чисел, та сортує його від більшого до меньшого,
 // або навпаки в залежності від значення аргументу direction.
-//     let nums:number[] = [11,21,3];
-// const sortNums=(array:number[],direction:string):number[]=>{
-//     if(direction==='ascending'){
-//         return array.sort((a,b)=>a-b);
-//     }
-//     if(direction==='descending'){
-//         return array.sort((a,b)=>b-a);
-//     }
-//     return [...array]
-// }
-// console.log(sortNums([1,2,3,4],'descending'));
+    let nums:number[] = [11,21,3];
+const sortNums=(array:number[],direction:string):number[]=>{
+    if(direction==='ascending'){
+        return array.sort((a,b)=>a-b);
+    }
+    if(direction==='descending'){
+        return array.sort((a,b)=>b-a);
+    }
+    return [...array]
+}
+console.log(sortNums([1,2,3,4],'descending'));
 // 6.7
 // -- відсортувати його за спаданням за monthDuration
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
 // // =========================
-// type courseType={
-//     title:string,
-//     monthDuration:number
-//     id?:number
-// }
-//
-// let coursesAndDurationArray:courseType[] = [
-// {title: 'JavaScript Complex', monthDuration: 5},
-// {title: 'Java Complex', monthDuration: 6},
-// {title: 'Python Complex', monthDuration: 6},
-// {title: 'QA Complex', monthDuration: 4},
-// {title: 'FullStack', monthDuration: 7},
-// {title: 'Frontend', monthDuration: 4}]
-//
-//     const LmonthDuration=coursesAndDurationArray.sort((a,b):number => b.monthDuration - a.monthDuration)
-// console.log(LmonthDuration)
-//
-//
-// const Fivemonth=coursesAndDurationArray.filter(x =>x.monthDuration>=5)
-// console.log(Fivemonth)
-//
-//
-// const idAdd = coursesAndDurationArray.map((course, index) => ({
-//     id:index+1,
-//     title:course.title,
-//     monthDuration:course.monthDuration,}
-// )
-// );
-// console.log(idAdd)
+type courseType={
+    title:string,
+    monthDuration:number
+    id?:number
+}
+
+let coursesAndDurationArray:courseType[] = [
+{title: 'JavaScript Complex', monthDuration: 5},
+{title: 'Java Complex', monthDuration: 6},
+{title: 'Python Complex', monthDuration: 6},
+{title: 'QA Complex', monthDuration: 4},
+{title: 'FullStack', monthDuration: 7},
+{title: 'Frontend', monthDuration: 4}]
+
+    const LmonthDuration=coursesAndDurationArray.sort((a,b):number => b.monthDuration - a.monthDuration)
+console.log(LmonthDuration)
+
+
+const Fivemonth=coursesAndDurationArray.filter(x =>x.monthDuration>=5)
+console.log(Fivemonth)
+
+
+const idAdd = coursesAndDurationArray.map((course, index) => ({
+    id:index+1,
+    title:course.title,
+    monthDuration:course.monthDuration,}
+)
+);
+console.log(idAdd)
+
 // 6.8
 // описати колоду карт (від 6 до туза без джокерів)
 // - знайти піковий туз
@@ -766,9 +767,9 @@
 //         });
 //     }
 // }
-// 6.9
-// // Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
-
+// // 6.9
+// // // Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+//
 //
 // const groupedDeck: GroupedDeck = deck.reduce((acc, card) => {
 //     acc[card.cardSuit].push(card);
@@ -779,29 +780,29 @@
 //     heart: [],
 //     clubs: []
 // });
-// неможливо закінчити завдання, використовуючи reduce і type/interface. потрібно використовувати(initialValue або as GroupedDeck) який ми ще не вчили на1му уроці
-
-// - знайти піковий туз
+// // неможливо закінчити завдання, використовуючи reduce і type/interface. потрібно використовувати(initialValue або as GroupedDeck) який ми ще не вчили на1му уроці
+//
+// // - знайти піковий туз
 //  const aceSpade:Card | undefined=deck.find(ace => ace.cardSuit === 'spade' && ace.value === 'ace');
 // console.log(aceSpade);
-
-// - всі шістки
+//
+// // - всі шістки
 // const sixmix:Card[]=deck.filter(deck => deck.value === '6');
 // console.log(sixmix);
-
-// - всі червоні карти
-
-// - всі буби
-// - всі трефи від 9 та більше
-
+//
+// // - всі червоні карти
+//
+// // - всі буби
+// // - всі трефи від 9 та більше
+//
 // const redCards:Card[]=deck.filter(card => card.color === 'red');
 // console.log(redCards);
-
+//
 // const diamondcards:Card[]=deck.filter(card => card.cardSuit === 'diamond');
 // console.log(diamondcards);
-
-// - всі трефи від 9 та більше
 //
+// // - всі трефи від 9 та більше
+// //
 // const clubsstreet:Card[] = deck.filter(card =>
 //     card.cardSuit === 'clubs' &&
 //     (card.value === '9' || card.value === '10' ||
@@ -812,86 +813,86 @@
 
 // // 6.9
 // написати пошук всіх об'єктів, в яких в modules є sass
-// type CourseType={
-//     title: string,
-//     monthDuration:number ,
-//     hourDuration: number,
-//     modules:string[]
-// }
-// let coursesArray:CourseType[] = [
-//     {
-//         title: 'JavaScript Complex',
-//         monthDuration: 5,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
-//     },
-//     {
-//         title: 'Java Complex',
-//         monthDuration: 6,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'git',
-//             'java core',
-//             'java advanced']
-//     },
-//     {
-//         title: 'Python Complex',
-//         monthDuration: 6,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'python core',
-//             'python advanced']
-//     },
-//     {
-//         title: 'QA Complex',
-//         monthDuration: 4,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
-//     },
-//     {
-//         title: 'FullStack',
-//         monthDuration: 7,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'react',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'git',
-//             'node.js',
-//             'python',
-//             'java']
-//     },
-//     {
-//         title: 'Frontend',
-//         monthDuration: 4,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
-//     }
-// ];
-// const sas=coursesArray.filter(item => item.modules.includes('sass') );
-// console.log(sas);
-//
-// const docker=coursesArray.filter(item => item.modules.includes('docker') );
-// console.log(docker);
+type CourseType={
+    title: string,
+    monthDuration:number ,
+    hourDuration: number,
+    modules:string[]
+}
+let coursesArray:CourseType[] = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+const sas=coursesArray.filter(item => item.modules.includes('sass') );
+console.log(sas);
+
+const docker=coursesArray.filter(item => item.modules.includes('docker') );
+console.log(docker);
 // ========================================================================================================================
 // ========================================================================================================================
 // ========================================================================================================================
@@ -900,14 +901,7 @@
 // 7.1
 // - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
 // створити пустий масив, наповнити його 10 об'єктами new User(....)
-// type UserType={
-//     id:number,
-//     name:string,
-//     surname:string,
-//     email:string,
-//     phone:number
-// }
-// <====не  нужен
+
 
 class User {
     constructor(
@@ -918,60 +912,60 @@ class User {
         public phone: number
     ) {}
 }
-// const arrUsers:User[]=[];
-// arrUsers.push(new User(1,'ss','sa', 'ss@mail',+972))
-// arrUsers.push(new User(2,'sgfs','sda', 'vbs@mail',+9572))
-// arrUsers.push(new User(3,'sd','sa', 'ads@mail',+9721))
-// arrUsers.push(new User(4,'kks','sa', 'ks@mail',+97223))
-// arrUsers.push(new User(5,'hh','sha', 'hs@mail',+97322))
-// arrUsers.push(new User(6,'rrs','rr', 'sr@mail',+9732))
-// arrUsers.push(new User(7,'gg','sa', 'ggs@mail',+9722))
-// arrUsers.push(new User(8,'ddd','da', 'dds@mail',+9723))
-// arrUsers.push(new User(9,'aa','sa', 'aaa@mail',+9722))
-// arrUsers.push(new User(10,'ww','sa', 'sww@mail',+9721))
-//
-// console.log(arrUsers);
+const arrUsers:User[]=[];
+arrUsers.push(new User(1,'ss','sa', 'ss@mail',+972))
+arrUsers.push(new User(2,'sgfs','sda', 'vbs@mail',+9572))
+arrUsers.push(new User(3,'sd','sa', 'ads@mail',+9721))
+arrUsers.push(new User(4,'kks','sa', 'ks@mail',+97223))
+arrUsers.push(new User(5,'hh','sha', 'hs@mail',+97322))
+arrUsers.push(new User(6,'rrs','rr', 'sr@mail',+9732))
+arrUsers.push(new User(7,'gg','sa', 'ggs@mail',+9722))
+arrUsers.push(new User(8,'ddd','da', 'dds@mail',+9723))
+arrUsers.push(new User(9,'aa','sa', 'aaa@mail',+9722))
+arrUsers.push(new User(10,'ww','sa', 'sww@mail',+9721))
+
+console.log(arrUsers);
 
 // Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
-// let filtr:User[]=arrUsers.filter(user=>user.id % 2 === 0);
-// console.log(filtr);
+let filtr:User[]=arrUsers.filter(user=>user.id % 2 === 0);
+console.log(filtr);
 
 // Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
 //
-// let sortedUsers:User[]=arrUsers.sort((a,b):number=>a.id - b.id)
-// console.log(sortedUsers)
+let sortedUsers:User[]=arrUsers.sort((a,b):number=>a.id - b.id)
+console.log(sortedUsers)
 
 // 7.2
 // - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 // створити пустий масив, наповнити його 10 об'єктами Client
-// class ClientClass{
-//     constructor(
-//         public id:number,
-//         public name:string,
-//         public surname:string,
-//         public  email:string,
-//         public  phone:number | string,
-//         public  order:string[]
-//     ) {}
-// }
-//
-// const clients:ClientClass[] = [
-//     new ClientClass(1, 'Анна', 'Иванова', 'anna@example.com', '+380971234567', ['Laptop', 'Mouse']),
-//     new ClientClass(2, 'Олег', 'Петров', 'oleg@example.com', '+380976543210', ['Phone']),
-//     new ClientClass(3, 'Мария', 'Сидорова', 'maria@example.com', '+380965432109', ['Tablet', 'Keyboard', 'Headphones']),
-//     new ClientClass(4, 'Иван', 'Коваленко', 'ivan@example.com', '+380954321098', ['TV']),
-//     new ClientClass(5, 'Татьяна', 'Лебедева', 'tatiana@example.com', '+380943210987', ['Monitor', 'USB Hub']),
-//     new ClientClass(6, 'Алексей', 'Морозов', 'alex@example.com', '+380932109876', ['Printer']),
-//     new ClientClass(7, 'Юлия', 'Григорьева', 'yulia@example.com', '+380921098765', ['SSD', 'RAM']),
-//     new ClientClass(8, 'Сергей', 'Бондаренко', 'sergey@example.com', '+380910987654', ['Smartwatch']),
-//     new ClientClass(9, 'Екатерина', 'Семенова', 'ekaterina@example.com', '+380909876543', ['Game Console', 'Controller']),
-//     new ClientClass(10, 'Николай', 'Кузнецов', 'nikolay@example.com', '+380898765432', ['Router'])
-// ];
+class ClientClass{
+    constructor(
+        public id:number,
+        public name:string,
+        public surname:string,
+        public  email:string,
+        public  phone:number | string,
+        public  order:string[]
+    ) {}
+}
+
+const clients:ClientClass[] = [
+    new ClientClass(1, 'Анна', 'Иванова', 'anna@example.com', '+380971234567', ['Laptop', 'Mouse']),
+    new ClientClass(2, 'Олег', 'Петров', 'oleg@example.com', '+380976543210', ['Phone']),
+    new ClientClass(3, 'Мария', 'Сидорова', 'maria@example.com', '+380965432109', ['Tablet', 'Keyboard', 'Headphones']),
+    new ClientClass(4, 'Иван', 'Коваленко', 'ivan@example.com', '+380954321098', ['TV']),
+    new ClientClass(5, 'Татьяна', 'Лебедева', 'tatiana@example.com', '+380943210987', ['Monitor', 'USB Hub']),
+    new ClientClass(6, 'Алексей', 'Морозов', 'alex@example.com', '+380932109876', ['Printer']),
+    new ClientClass(7, 'Юлия', 'Григорьева', 'yulia@example.com', '+380921098765', ['SSD', 'RAM']),
+    new ClientClass(8, 'Сергей', 'Бондаренко', 'sergey@example.com', '+380910987654', ['Smartwatch']),
+    new ClientClass(9, 'Екатерина', 'Семенова', 'ekaterina@example.com', '+380909876543', ['Game Console', 'Controller']),
+    new ClientClass(10, 'Николай', 'Кузнецов', 'nikolay@example.com', '+380898765432', ['Router'])
+];
 
 // 7.3
 // Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 //
-// console.log(clients.sort((a:ClientClass,b:ClientClass):number=> a.order.length - b.order.length));
+console.log(clients.sort((a:ClientClass,b:ClientClass):number=> a.order.length - b.order.length));
 
 // 7.4
 
@@ -982,123 +976,123 @@ class User {
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
-// type CarType={
-//     model:string,
-//     manufacturer:string,
-//     year:number,
-//     maxSpeed:number,
-//     engineVolume:number,
-//     drive:()=>void,
-//     info:()=>void,
-//     increaseMaxSpeed?:(newSpeed:number)=>void,
-//     changeYear?: (newYear: number) => void;
-//     driver?: DriverType
-//     addDriver: (driver: DriverType) => void;
-//     [key: string]: any;
-//
-// }
-// type DriverType={
-//     name: string;
-//     age: number;
-//     license?: string;
-// }
-// function Car(this:CarType,
-//     model:string,
-//     manufacturer:string,
-//     year:number,
-//     maxSpeed:number,
-//     engineVolume:number,
-// ) {
-//     this.model = model;
-//     this.manufacturer = manufacturer;
-//     this.year = year;
-//     this.maxSpeed = maxSpeed;
-//     this.engineVolume = engineVolume;
-//
-//
-//     this.drive = function () {
-//         console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)
-//     };
-//
-//     this.info = function () {
-//         for (const key in this) {
-//             if (this.hasOwnProperty(key) && typeof this[key] !== "function")  {
-//                 console.log(`${key} - ${this[key]}`);
-//             }
-//         }
-//     };
-//     this.increaseMaxSpeed = function (newSpeed) {
-//         this.maxSpeed += newSpeed;
-//     }
-//
-//     this.changeYear = function (newYear) {
-//         if (newYear > this.year) {
-//             this.year = newYear;
-//         } else (console.log('time machine not found'))
-//     }
-//     this.addDriver = function (driver: DriverType) {
-//         this.driver = driver;
-//     };
-// }
-//
-//     const myCar = new (Car as any)("Tesla", "Model S", 2023, 250, 3.0)
-//
-//
-// myCar.drive();
-// myCar.info();
-//
-//
-// myCar.newSpeed(30);
-// myCar.drive();
-//
-//
-// myCar.renewYear(2025);
-// myCar.info();
-//
-//
-// myCar.addDriver({ name: "Олексій", age: 30, experience: "10 років" });
-//
-// myCar.info();
-// console.log(myCar.driver);
+type CarType1={
+    model:string,
+    manufacturer:string,
+    year:number,
+    maxSpeed:number,
+    engineVolume:number,
+    drive:()=>void,
+    info:()=>void,
+    increaseMaxSpeed?:(newSpeed:number)=>void,
+    changeYear?: (newYear: number) => void;
+    driver?: DriverType1
+    addDriver: (driver: DriverType1) => void;
+    [key: string]: any;
+
+}
+type DriverType1={
+    name: string;
+    age: number;
+    license?: string;
+}
+function Car1(this:CarType1,
+    model:string,
+    manufacturer:string,
+    year:number,
+    maxSpeed:number,
+    engineVolume:number,
+) {
+    this.model = model;
+    this.manufacturer = manufacturer;
+    this.year = year;
+    this.maxSpeed = maxSpeed;
+    this.engineVolume = engineVolume;
+
+
+    this.drive = function () {
+        console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)
+    };
+
+    this.info = function () {
+        for (const key in this) {
+            if (this.hasOwnProperty(key) && typeof this[key] !== "function")  {
+                console.log(`${key} - ${this[key]}`);
+            }
+        }
+    };
+    this.increaseMaxSpeed = function (newSpeed) {
+        this.maxSpeed += newSpeed;
+    }
+
+    this.changeYear = function (newYear) {
+        if (newYear > this.year) {
+            this.year = newYear;
+        } else (console.log('time machine not found'))
+    }
+    this.addDriver = function (driver: DriverType1) {
+        this.driver = driver;
+    };
+}
+
+    const myCar = new (Car1 as any)("Tesla", "Model S", 2023, 250, 3.0)
+
+
+myCar.drive();
+myCar.info();
+
+
+myCar.newSpeed(30);
+myCar.drive();
+
+
+myCar.renewYear(2025);
+myCar.info();
+
+
+myCar.addDriver({ name: "Олексій", age: 30, experience: "10 років" });
+
+myCar.info();
+console.log(myCar.driver);
 
 // 7.5
 
-// type DriverType = {
-//     name: string;
-//     age: number;
-//     license?: string;
-// };
-// class Car {
-//     constructor(
-//         public model: string,
-//         public manufacturer: string,
-//         public year: number,
-//         public maxSpeed: number,
-//         public engineVolume: number,
-//         public driver?: DriverType
-//     ) {}
-//     info(): void {
-//         console.log(`model - ${this.model}`);
-//         console.log(`manufacturer - ${this.manufacturer}`);
-//         console.log(`year - ${this.year}`);
-//         console.log(`maxSpeed - ${this.maxSpeed}`);
-//         console.log(`engineVolume - ${this.engineVolume}`);
-//         if (this.driver) {
-//             console.log(`driver - ${this.driver.name}, ${this.driver.age} років`);
-//         }
-//     }
-//    increaseMaxSpeed(newSpeed:number):void {
-//         this.maxSpeed += newSpeed;
-//     }
-//    changeYear (newYear:number):void {
-//         if (newYear > this.year) {
-//             this.year = newYear;
-//         } else (console.log('time machine not found'))
-//     }
-//    addDrive (driver: DriverType):void {
-//         this.driver = driver;
-//     };
-// }
+type DriverType = {
+    name: string;
+    age: number;
+    license?: string;
+};
+class Car {
+    constructor(
+        public model: string,
+        public manufacturer: string,
+        public year: number,
+        public maxSpeed: number,
+        public engineVolume: number,
+        public driver?: DriverType
+    ) {}
+    info(): void {
+        console.log(`model - ${this.model}`);
+        console.log(`manufacturer - ${this.manufacturer}`);
+        console.log(`year - ${this.year}`);
+        console.log(`maxSpeed - ${this.maxSpeed}`);
+        console.log(`engineVolume - ${this.engineVolume}`);
+        if (this.driver) {
+            console.log(`driver - ${this.driver.name}, ${this.driver.age} років`);
+        }
+    }
+   increaseMaxSpeed(newSpeed:number):void {
+        this.maxSpeed += newSpeed;
+    }
+   changeYear (newYear:number):void {
+        if (newYear > this.year) {
+            this.year = newYear;
+        } else (console.log('time machine not found'))
+    }
+   addDrive (driver: DriverType):void {
+        this.driver = driver;
+    };
+}
 
 // 7.6
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
@@ -1106,62 +1100,62 @@ class User {
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 
-// class Cinderella {
-//     constructor(
-//         public name: string,
-//         public age: number,
-//         public ShoeSize: number) {}
-// }
-//
-// class Creep{
-//     constructor(
-//         public name : string,
-//         public age : number,
-//        public intertest:number) {}
-// }
-//
-// const Cinderellas:Cinderella[]=[
-//     new Cinderella('girl',18,38),
-//     new Cinderella('giarl',18,39),
-//     new Cinderella('gisdrl',18,48),
-//     new Cinderella('girlsd',18,38),
-//     new Cinderella('girl',18,34),
-//     new Cinderella('giaarl',18,38),
-//     new Cinderella('gidrl',18,38),
-//     new Cinderella('theItgirl',27,37),
-//     new Cinderella('girl',18,38),
-//     new Cinderella('giddrl',18,38),
-//
-// ]
-// const prince:Creep=new Creep('prince',27,37)
-//
-// for (const girl of Cinderellas){
-//     if (girl.ShoeSize === prince.intertest){
-//         console.log(girl.name);
-//     }
-// }
-//
-// const search=Cinderellas.find(girl => girl.ShoeSize === prince.intertest)
-// if (search){
-//     console.log(search.name)}
-// else {console.log('not found')}
-//
+class Cinderella {
+    constructor(
+        public name: string,
+        public age: number,
+        public ShoeSize: number) {}
+}
+
+class Creep{
+    constructor(
+        public name : string,
+        public age : number,
+       public intertest:number) {}
+}
+
+const Cinderellas:Cinderella[]=[
+    new Cinderella('girl',18,38),
+    new Cinderella('giarl',18,39),
+    new Cinderella('gisdrl',18,48),
+    new Cinderella('girlsd',18,38),
+    new Cinderella('girl',18,34),
+    new Cinderella('giaarl',18,38),
+    new Cinderella('gidrl',18,38),
+    new Cinderella('theItgirl',27,37),
+    new Cinderella('girl',18,38),
+    new Cinderella('giddrl',18,38),
+
+]
+const prince:Creep=new Creep('prince',27,37)
+
+for (const girl of Cinderellas){
+    if (girl.ShoeSize === prince.intertest){
+        console.log(girl.name);
+    }
+}
+
+const search=Cinderellas.find(girl => girl.ShoeSize === prince.intertest)
+if (search){
+    console.log(search.name)}
+else {console.log('not found')}
+
 
 
 // 7.7
 // *Через Array.prototype. створити власний foreach, filter
 
-// interface Array<T>{
-//     myForEach(callback: (item: T,index: number,array:T[])=>void):void;
-// }
-//
-// Array.prototype.myForEach = function<T> (callback:(item: T,index: number,array:T[])=>void):void {
-//  for(let i=0;i<this.length; i++){
-//      callback(this[i],i,this)
-//    }
-// };
-//
-// [11, 22, 33].myForEach((x,i)=> {console.log(`index ${i}`,x)});
+interface Array<T>{
+    myForEach(callback: (item: T,index: number,array:T[])=>void):void;
+}
+
+Array.prototype.myForEach = function<T> (callback:(item: T,index: number,array:T[])=>void):void {
+ for(let i=0;i<this.length; i++){
+     callback(this[i],i,this)
+   }
+};
+
+[11, 22, 33].myForEach((x,i)=> {console.log(`index ${i}`,x)});
 
 // ===================================================================================
 // ===================================================================================
@@ -1175,31 +1169,31 @@ class User {
 //     -2)Подумати і реалізувати логіку, в якій кінцевий об'єкт буде мати функції,' +
 // -3)'які в нього були до цього моменту.
 
-// type ClonableObject={[key:string]:any}
-//
-// function cloner(obj:ClonableObject ):ClonableObject {
-//     if(obj){
-//         let functions:{key:string,functionClone:Function}[]=[]
-//
-//         for (let key in obj){
-//             if(typeof obj[key] === 'function'){
-//                 const functionClone = obj[key].bind({});
-//                 functions.push({functionClone, key})
-//             }
-//         }
-//         const cloneObg:ClonableObject=JSON.parse(JSON.stringify(obj))
-//         for (let func of functions){
-//
-//             cloneObg[func.key] = func.functionClone;
-//         }
-//
-//         return cloneObg
-//     }
-//     throw new Error('10101010')
-// }
-// const clone=cloner({id:123,name:"John", greeting(){console.log("Greeting")}, beliberda(){console.log("Beliberda")}})
-//
-// console.log(clone)
+type ClonableObject={[key:string]:any}
+
+function cloner(obj:ClonableObject ):ClonableObject {
+    if(obj){
+        let functions:{key:string,functionClone:Function}[]=[]
+
+        for (let key in obj){
+            if(typeof obj[key] === 'function'){
+                const functionClone = obj[key].bind({});
+                functions.push({functionClone, key})
+            }
+        }
+        const cloneObg:ClonableObject=JSON.parse(JSON.stringify(obj))
+        for (let func of functions){
+
+            cloneObg[func.key] = func.functionClone;
+        }
+
+        return cloneObg
+    }
+    throw new Error('10101010')
+}
+const clone=cloner({id:123,name:"John", greeting(){console.log("Greeting")}, beliberda(){console.log("Beliberda")}})
+
+console.log(clone)
 
 // 8.2
 // за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration
@@ -1210,7 +1204,7 @@ type SomeType={
     title:string;
     monthDuration:number
 }
-let coursesAndDurationArray:SomeType[] = [
+let coursesAndDurationArray1:SomeType[] = [
     {title: 'JavaScript Complex', monthDuration: 5},
     {title: 'Java Complex', monthDuration: 6},
     {title: 'Python Complex', monthDuration: 6},
@@ -1218,5 +1212,5 @@ let coursesAndDurationArray:SomeType[] = [
     {title: 'FullStack', monthDuration: 7},
     {title: 'Frontend', monthDuration: 4}
 ];
-const fod:SomeType[]=coursesAndDurationArray.map((course,index):SomeType => ({...course, id:index+1}))
+const fod:SomeType[]=coursesAndDurationArray1.map((course,index):SomeType => ({...course, id:index+1}))
 
